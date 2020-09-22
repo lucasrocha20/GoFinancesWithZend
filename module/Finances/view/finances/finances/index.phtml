@@ -1,0 +1,90 @@
+<?= $this->doctype() ?>
+
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('Go Finances')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/logo.ico'])
+            ->prependStylesheet($this->basePath('css/style.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->inlineScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.3.1.min.js'))
+        ?>
+    </head>
+    <body>
+        <div class="container-header">
+            <header class="header">
+                <img src="<?= $this->basePath('img/logo.svg') ?>" height="28" alt="Go Finances <?= \Application\Module::VERSION ?>"/></a>
+                <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?= $this->url('home') ?>">
+                                Home
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        
+        <div class="wrapper-container">
+            <section class="card-container">
+                <div class="card"> 
+                    <header class="header-card">
+                        <p class="p-header">Entradas</p>
+                        <img src="/img/income.svg" alt="Entradas" />
+                    </header>
+                    <h1>10</h1>
+                </div>
+                <div class="card"> 
+                    <header class="header-card">
+                        <p>Saídas</p>
+                        <img src="/img/outcome.svg" alt="Saidas" />
+                    </header>
+                    <h1>20</h1>
+                </div>
+                <div class="card" style="background-color: #FF872C; color: #fff"> 
+                    <header class="header-card">
+                        <p>Total</p>
+                        <img src="/img/total.svg" alt="Total" />
+                    </header>
+                    <h1>30</h1>
+                </div>
+            </section>
+        
+            <section class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Preço</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <td>Teste</td>
+                        <td>
+                            Saída
+                        </td>
+                        <td>Comida</td>
+                        <td>19/06/2020</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </body>
+</html>

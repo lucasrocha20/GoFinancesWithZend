@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #F0F2F5 ;
+    -webkit-font-smoothing: antialiased
+  }
+
+  body, input, button {
+    font: 16px "Poppins", sans-serif;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+.zf-green {
+    color: #68b604;
+}
+
+.btn-success {
+    background-color: #57a900;
+    background-image: -moz-linear-gradient(top, #70d900, #57a900);
+    background-image: -ms-linear-gradient(top, #70d900, #57a900);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+    background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+    background-image: -o-linear-gradient(top, #70d900, #57a900);
+    background-image: linear-gradient(top, #70d900, #57a900);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+    background-color: #57a900;
+}
+
+div.container a.navbar-brand > img {
+    display: inline;
+    margin-right: 4px;
+    margin-top: -2px;
+}
+
+div.container-header {
+  background: #5636d3;
+  padding: 30px 0;
+  height: 200px;
+}
+
+
+header.header {
+    width: 1120px;
+    margin: 0 auto;
+    padding: '0 20px 150px';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+section.card-container  {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+    margin-top: -150px;
+}
+
+div.card {
+    padding: 22px 32px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #363F5F;
+}
+
+header.header-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header.header-card p {
+    font-size: 16px;
+}
+
+div.card h1 {
+    margin-top: 14px;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 54px;
+}
+
+div.wrapper-container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section.table-container {
+    margin-top: 64px;
+}
+
+section.table-container table {
+    width: 100%;
+    border-spacing: 0 8px;
+}
+
+section.table-container table th {
+    color: #969cb3;
+    font-weight: normal;
+    padding: 20px 32px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+section.table-container table td {
+    padding: 20px 32px;
+    border: 0;
+    background: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    color: #969cb3;
+}
+
+section.table-container table td:first-child {
+  border-radius: 8px 0 0 8px;
+}
