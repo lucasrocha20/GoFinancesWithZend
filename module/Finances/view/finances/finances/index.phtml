@@ -76,12 +76,13 @@
 
                     <tbody>
                         <?php foreach ($finances as $finance) : ?>
-                            <td><?= $this->escapeHtml($finance->title) ?></td>
-                            <td><?= $this->escapeHtml($finance->price) ?></td>
-                            <td><?= $this->escapeHtml($finance->category) ?></td>
-                            <td><?= $this->escapeHtml($finance->date) ?></td>
+                            <tr>
+                                <td><?= $this->escapeHtml($finance->title) ?></td>
+                                <td><?= $this->escapeHtml($finance->price) ?></td>
+                                <td><?= $this->escapeHtml($finance->category) ?></td>
+                                <td><?= $this->escapeHtml($finance->date) ?></td>
+                            </tr>
                         <?php endforeach; ?>
-                    </tr>
                     </tbody>
                 </table>
             </section>
