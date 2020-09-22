@@ -75,12 +75,12 @@
                     </thead>
 
                     <tbody>
-                        <td>Teste</td>
-                        <td>
-                            Saída
-                        </td>
-                        <td>Comida</td>
-                        <td>19/06/2020</td>
+                        <?php foreach ($finances as $finance) : ?>
+                            <td><?= $this->escapeHtml($finance->title) ?></td>
+                            <td><?= $this->escapeHtml($finance->price) ?></td>
+                            <td><?= $this->escapeHtml($finance->category) ?></td>
+                            <td><?= $this->escapeHtml($finance->date) ?></td>
+                        <?php endforeach; ?>
                     </tr>
                     </tbody>
                 </table>

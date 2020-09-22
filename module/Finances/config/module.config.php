@@ -8,7 +8,7 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'controllers' => [
         'factories' => [
-            Controller\FinancesController::class => InvokableFactory::class,
+            // Controller\FinancesController::class => InvokableFactory::class,
         ],
     ],
     'router' => [
@@ -33,5 +33,12 @@ return [
         'template_path_stack' => [
             'finances' => __DIR__ . '/../view',
         ],
+    ],
+    'db' => [
+    	'driver' => 'Pdo_Mysql',
+    	'database' => 'goFinances',
+    	'username' => 'root',
+    	'password' => 'root',
+    	'hostname' => 'localhost'
     ],
 ];
