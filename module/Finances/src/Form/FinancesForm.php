@@ -8,16 +8,52 @@ class FinancesForm extends Form
 {
     public function __construct($name = null)
     {
-        parent::__construct('finances', []);
+        parent::__construct('finances');
         
-        $this->add(new \Zend\Form\Element\Hidden('id'));
-        $this->add(new \Zend\Form\Element\Text("title",['label' => "Título"]));
-        $this->add(new \Zend\Form\Element\Text("type",['label' => "Tipo de movimento"]));
-        $this->add(new \Zend\Form\Element\Number("price",['label' => "Valor"]));
-        $this->add(new \Zend\Form\Element\Text("category",['label' => "Categoria"]));
-        
-        $submit = new \Zend\Form\Element\Submit('submit');
-        $submit->setAttributes(['value'=>'Salvar','id'=>'submitbutton']);
-        $this->add($submit);
+        $this->add([
+            'name'  => 'id',
+            'type'  => 'hidden',
+        ]);
+
+        $this->add([
+            'name'  => 'title',
+            'type'  => 'text',
+            'options'   =>  [
+                'label' =>  'Título',
+            ],
+        ]);
+
+        $this->add([
+            'name'  => 'type',
+            'type'  => 'text',
+            'options'   =>  [
+                'label' =>  'Tipo de transição',
+            ],
+        ]);
+
+        $this->add([
+            'name'  => 'price',
+            'type'  => 'number',
+            'options'   =>  [
+                'label' =>  'Preço',
+            ],
+        ]);
+
+        $this->add([
+            'name'  => 'category',
+            'type'  => 'text',
+            'options'   =>  [
+                'label' =>  'Categoria',
+            ],
+        ]);
+
+        $this->add([
+            'name'  => 'submit',
+            'type'  => 'submit',
+            'attributes'   =>  [
+                'value' =>  'Salvar',
+                'id'    =>  'submitbutton',
+            ],
+        ]);
     }
 }

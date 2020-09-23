@@ -10,6 +10,8 @@
 $form->setAttribute('action', $this->url('finances', ['action' => 'add']));
 $form->prepare();
 
+echo $this->form()->openTag($form);
+
 $id = $this->form->get('id');
 $title = $this->form->get('title');
 $type = $this->form->get('type');
@@ -62,3 +64,7 @@ $submit->setAttribute('class','btn btn-primary btn-lg');
     <a href="<?=$this->url('finances',['action'=>'index'])?>" class="btn btn-warning btn-lg">
     Voltar</a>
 </div>
+
+<?php
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();

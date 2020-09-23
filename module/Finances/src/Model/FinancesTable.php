@@ -16,8 +16,6 @@ class FinancesTable
 
     public function fetchAll()
     {
-        // return $this->tableGateway->select();
-
         $resultSet = $this->tableGateway->select();
         $resultSet->buffer();
 
@@ -34,7 +32,7 @@ class FinancesTable
             'date'      => '2020-07-01 00:00:00'
         ];
 
-        $id = (int) $finance->getId();
+        $id = (int) $finance->id;
         if ($id === 0) {
             $this->tableGateway->insert($data);
             return;
