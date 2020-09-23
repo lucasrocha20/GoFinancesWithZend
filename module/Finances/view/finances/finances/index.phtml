@@ -53,8 +53,13 @@
                 <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('home') ?>">
+                            <a class="nav-link" href="<?= $this->url('finances') ?>">
                                 Home
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?= $this->url('home') ?>">
+                                Adicionar
                             </a>
                         </li>
                     </ul>
@@ -91,17 +96,18 @@
                 <table>
                     <thead>
                         <tr>
-                            <th style="color: #363f5f">Título</th>
-                            <th style="color: #363f5f">Preço</th>
-                            <th style="color: #363f5f">Categoria</th>
-                            <th style="color: #363f5f">Data</th>
+                            <th>Título</th>
+                            <th>Preço</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>&nbsp;</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php foreach ($finances as $finance) : ?>
                             <tr>
-                                <td><?= $this->escapeHtml($finance->title) ?></td>
+                                <td style="color: #363f5f"><?= $this->escapeHtml($finance->title) ?></td>
                                 <?php if($finance->type == 'income') : ?>
                                     <td style="color: #12a454">R$ <?= number_format($finance->price,2,',', '.') ?></td>
                                 <?php endif; ?>
@@ -110,6 +116,10 @@
                                 <?php endif; ?>
                                 <td><?= $this->escapeHtml($finance->category) ?></td>
                                 <td><?= date("m/d/Y",strtotime($finance->date)) ?></td>
+                                <td>
+                                    <a href="">Editar</a>
+                                    <a href="">Deletar</a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
