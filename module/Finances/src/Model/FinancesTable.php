@@ -16,6 +16,11 @@ class FinancesTable
 
     public function fetchAll()
     {
-        return $this->tableGateway->select();
+        // return $this->tableGateway->select();
+
+        $resultSet = $this->tableGateway->select();
+        $resultSet->buffer();
+
+        return $resultSet;
     }
 }

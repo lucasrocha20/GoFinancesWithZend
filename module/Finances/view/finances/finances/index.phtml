@@ -1,5 +1,29 @@
 <?= $this->doctype() ?>
 
+<?php 
+
+    $totalIncome = 0;
+    $totalOutcome = 0;
+
+    foreach ($finances as $finance)
+    {
+        switch($finance->type)
+        {
+            case 'income':
+                $totalIncome += (int) $finance->price;
+                break;
+
+            case 'outcome':
+                $totalOutcome += (int) $finance->price;
+                break;
+            default:
+                break;
+        }
+    }
+
+    $total = $totalIncome - $totalOutcome;
+?>
+
 <html lang="pt-BR">
     <head>
         <meta charset="utf-8">
@@ -45,21 +69,21 @@
                         <p class="p-header">Entradas</p>
                         <img src="/img/income.svg" alt="Entradas" />
                     </header>
-                    <h1>10</h1>
+                    <h1><?=number_format($totalIncome,2,',', '.')?></h1>
                 </div>
                 <div class="card"> 
                     <header class="header-card">
                         <p>Saídas</p>
                         <img src="/img/outcome.svg" alt="Saidas" />
                     </header>
-                    <h1>20</h1>
+                    <h1><?=number_format($totalOutcome,2,',', '.')?></h1>
                 </div>
                 <div class="card" style="background-color: #FF872C; color: #fff"> 
                     <header class="header-card">
                         <p>Total</p>
                         <img src="/img/total.svg" alt="Total" />
                     </header>
-                    <h1>30</h1>
+                    <h1><?=number_format($total,2,',', '.')?></h1>
                 </div>
             </section>
         
@@ -67,10 +91,10 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Título</th>
-                            <th>Preço</th>
-                            <th>Categoria</th>
-                            <th>Data</th>
+                            <th style="color: #363f5f">Título</th>
+                            <th style="color: #363f5f">Preço</th>
+                            <th style="color: #363f5f">Categoria</th>
+                            <th style="color: #363f5f">Data</th>
                         </tr>
                     </thead>
 
@@ -78,9 +102,14 @@
                         <?php foreach ($finances as $finance) : ?>
                             <tr>
                                 <td><?= $this->escapeHtml($finance->title) ?></td>
-                                <td><?= $this->escapeHtml($finance->price) ?></td>
+                                <?php if($finance->type == 'income') : ?>
+                                    <td style="color: #12a454">R$ <?= number_format($finance->price,2,',', '.') ?></td>
+                                <?php endif; ?>
+                                <?php if($finance->type == 'outcome') : ?>
+                                    <td style="color: #e83f5b">- R$ <?= number_format($finance->price,2,',', '.') ?></td>
+                                <?php endif; ?>
                                 <td><?= $this->escapeHtml($finance->category) ?></td>
-                                <td><?= $this->escapeHtml($finance->date) ?></td>
+                                <td><?= date("m/d/Y",strtotime($finance->date)) ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

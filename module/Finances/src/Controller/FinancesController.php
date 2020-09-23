@@ -18,7 +18,7 @@ class FinancesController extends AbstractActionController
     public function indexAction()
     {
         return new ViewModel([
-            'finances' => $this->table->fetchAll(),
+            'finances'      => $this->table->fetchAll(),
         ]);
     }
 
