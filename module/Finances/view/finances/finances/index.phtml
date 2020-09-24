@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('home') ?>">
+                            <a class="nav-link" href="<?= $this->url('finances',['action'=>'add']) ?>">
                                 Adicionar
                             </a>
                         </li>
@@ -117,8 +117,8 @@
                                 <td><?= $this->escapeHtml($finance->category) ?></td>
                                 <td><?= date("m/d/Y",strtotime($finance->date)) ?></td>
                                 <td>
-                                    <a href="">Editar</a>
-                                    <a href="">Deletar</a>
+                                    <a href="<?=$this->url('finances',['action'=>'edit', 'id' => $finance->id])?>">Editar</a>
+                                    <a href="<?=$this->url('finances',['action'=>'delete', 'id' => $finance->id])?>">Deletar</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

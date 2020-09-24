@@ -136,4 +136,15 @@ class Finances
         $this->inputFilter = $inputFilter;
         return $this->inputFilter;
     }
+
+    public function getArrayCopy()
+    {
+        return [
+            'id'        =>  $this->id,
+            'title'     =>  $this->title,
+            'type'      =>  $this->type,
+            'price'     =>  $this->price,
+            'category'  =>  $this->category,
+        ];
+    }
 }

@@ -22,6 +22,23 @@ class FinancesTable
         return $resultSet;
     }
 
+    public function getFinance($id)
+    {
+        $id = (int) $id;
+        $rowset = $this->tableGateway->select(['id' => $id]);
+        $row = $rowset->current();
+
+        if(!$row)
+        {
+            throw new RuntimeException(sprintf(
+                'Could not find row with identifier %d',
+                $id
+            ));
+        }
+
+        return $row;
+    }
+
     public function saveFinances(Finances $finance)
     {
         $data = [
@@ -38,5 +55,10 @@ class FinancesTable
             return;
         }
         $this->tableGateway->update($data, ['id' => $id]);
+    }
+
+    public function deleteFinance($id)
+    {
+        $this->tableGateway->delete(['id' => (int) $id]);
     }
 }

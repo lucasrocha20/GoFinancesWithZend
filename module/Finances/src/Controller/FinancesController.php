@@ -46,9 +46,81 @@ class FinancesController extends AbstractActionController
             return new ViewModel(['form' => $form]);
         }
         
-        print_r('teste');
         $finances->exchangeArray($form->getData());
         $this->table->saveFinances($finances);
         return $this->redirect()->toRoute('finances');
+    }
+
+    public function editAction()
+    {
+        $id = (int) $this->params()->fromRoute('id', 0);
+
+        if($id === 0)
+        {
+            return $this->redirect()->toRoute('finances',['action' => 'add']);
+        }
+
+        try
+        {
+            $finance = $this->table->getFinance($id);
+        } catch (Exception $err)
+        {
+            return $this->redirect()->toRoute('finances', ['action' => 'index']);
+        }
+
+        $form = new FinancesForm();
+        $form->bind($finance);
+
+        $form->get('submit')->setAttribute('value', 'Editar');
+
+        $request = $this->getRequest();
+        $viewData = ['id' => $id, 'form' => $form];
+
+        if(!$request->isPost())
+        {
+            return $viewData;
+        }
+
+        $form->setInputFilter($finance->getInputFilter());
+        $form->setData($request->getPost());
+
+        if(!$form->isValid())
+        {
+            return $viewData;
+        }
+
+        $this->table->saveFinances($finance);
+
+        return $this->redirect()->toRoute('finances',['action' => 'index']);
+    }
+
+    public function deleteAction()
+    {
+        $id = (int) $this->params()->fromRoute('id', 0);
+
+        if(!$id)
+        {
+            return $this->redirect()->toRoute('finances');
+        }
+
+        $request = $this->getRequest();
+
+        if($request->isPost())
+        {
+            $del = $request->getPost('del', 'Nao');
+            
+            if($del == 'Sim')
+            {
+                $this->table->deleteFinance($id);    
+            }
+
+            return $this->redirect()->toRoute('finances');
+        }
+
+        
+        return [
+            'id'        =>  $id,
+            'finances'  =>  $this->table->getFinance($id),
+        ];
     }
 }
