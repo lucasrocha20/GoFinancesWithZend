@@ -25,9 +25,13 @@ class FinancesForm extends Form
 
         $this->add([
             'name'  => 'type',
-            'type'  => 'text',
+            'type'  => 'select',
             'options'   =>  [
                 'label' =>  'Tipo de transição',
+                'value_options' =>  [
+                    'income'    =>  'Entrada',
+                    'outcome'   =>  'Saída'
+                ],
             ],
         ]);
 

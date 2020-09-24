@@ -57,7 +57,7 @@ div.container-header {
 header.header {
     width: 1120px;
     margin: 0 auto;
-    padding: '0 20px 150px';
+    padding: 0 20px 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,6 +75,17 @@ section.card-container  {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 32px;
     margin-top: -150px;
+}
+
+section.title-container  {
+    margin-top: -150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.title-container  h1 {
+    color: #fff;
 }
 
 div.card {
@@ -114,12 +125,13 @@ section.table-container {
 
 section.table-container table {
     width: 100%;
+    border-collapse: separate;
     border-spacing: 0 8px;
 }
 
 section.table-container table th {
     color: #969cb3;
-    font-weight: normal;
+    font-weight: bold;
     padding: 20px 32px;
     text-align: left;
     font-size: 16px;
@@ -131,7 +143,7 @@ section.table-container table td {
     border: 0;
     background: #fff;
     font-size: 16px;
-    font-weight: normal;
+    font-weight: bold;
     color: #969cb3;
 }
 
@@ -141,4 +153,35 @@ section.table-container table td:first-child {
 
 section.table-container table td:last-child {
     border-radius: 0 8px 8px 0;
+}
+
+div.form-register {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+div.input-form-register {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+div.button-form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.warning-window {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 10px 30px;
+    background: #dedede;
+}
+
+div.warning-window h2{
+    text-align: center;
 }

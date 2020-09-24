@@ -53,11 +53,11 @@
                 <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
                     <ul style="list-style: none;" class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('finances') ?>">Home</a>
+                            <a style="font-weight: bold" class="nav-link" href="<?= $this->url('finances') ?>">Home</a>
                             &nbsp;&nbsp;
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('finances',['action'=>'add']) ?>">Adicionar</a>
+                            <a style="font-weight: bold" class="nav-link" href="<?= $this->url('finances',['action'=>'add']) ?>">Adicionar</a>
                         </li>
                     </ul>
                 </nav>
@@ -115,7 +115,7 @@
                                 <td><?= date("d/m/Y",strtotime($finance->date)) ?></td>
                                 <td>
                                     <a href="<?=$this->url('finances',['action'=>'edit', 'id' => $finance->id])?>" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
-                                    <a href="<?=$this->url('finances',['action'=>'delete', 'id' => $finance->id])?>" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                                    <a href="<?=$this->url('finances',['action'=>'delete', 'id' => $finance->id])?>" class="btn btn-danger" style="background-color: #e83f5b"><i class="glyphicon glyphicon-trash"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

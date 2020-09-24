@@ -1,21 +1,39 @@
 <?php
-    $title = 'Deletando transição';
-    $utl   = $this->url('finances', ['action' => 'delete', 'id' => $id]);
-
-    $this->headTitle($title);
+    $url   = $this->url('finances', ['action' => 'delete', 'id' => $id]);
 ?>
 
-<h1><?=$this->escapeHtml($title)?></h1>
+<div class="container-header">
+    <header class="header">
+        <img src="<?= $this->basePath('img/logo.svg') ?>" height="28" alt="Go Finances <?= \Application\Module::VERSION ?>"/></a>
+        <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
+            <ul style="list-style: none;" class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a style="font-weight: bold" class="nav-link" href="<?= $this->url('finances') ?>">Home</a>
+                    &nbsp;&nbsp;
+                </li>
+            </ul>
+        </nav>
+    </header>
+</div>
+<div class="wrapper-container">
+    <section class="title-container">
+        <h1>Deletando transição</h1>
+    </section>
+</div>
 
-<p>
-    Você realmente quer deletar a transição
-    "<?= $this->escapeHtml($finances->title) ?>" ?
-</p>
+<div class="warning-window">
+    <h2>
+        Você realmente quer deletar a transição
+        "<?= $this->escapeHtml($finances->title) ?>" ?
+    </h2>
 
-<form action="<?= $url ?>" method="post">
-    <div class="form-group">
-        <input type="hidden" name="id" value="<?= (int) $album->id ?>" />
-        <input type="submit" class="btn btn-danger" name="del" value="Sim" />
-        <input type="submit" class="btn btn-success" name="del" value="Nao" />
-    </div>
-</form>
+    <form action="<?= $url ?>" method="post">
+        <div class="form-group">
+            <input type="hidden" name="id" value="<?= (int) $album->id ?>" />
+            <div class="button-form-group">
+                <input type="submit" class="btn btn-danger btn-lg" style="background-color:##e83f5b; margin-right: 10px" name="del" value="Sim" />
+                <input type="submit" class="btn btn-success btn-lg" style="background-color:#12a454" name="del" value="Nao" />
+            </div>
+        </div>
+    </form>
+</div>
