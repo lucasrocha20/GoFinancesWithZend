@@ -51,16 +51,13 @@
             <header class="header">
                 <img src="<?= $this->basePath('img/logo.svg') ?>" height="28" alt="Go Finances <?= \Application\Module::VERSION ?>"/></a>
                 <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
-                    <ul class="navbar-nav mr-auto">
+                    <ul style="list-style: none;" class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('finances') ?>">
-                                Home
-                            </a>
+                            <a class="nav-link" href="<?= $this->url('finances') ?>">Home</a>
+                            &nbsp;&nbsp;
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?= $this->url('finances',['action'=>'add']) ?>">
-                                Adicionar
-                            </a>
+                            <a class="nav-link" href="<?= $this->url('finances',['action'=>'add']) ?>">Adicionar</a>
                         </li>
                     </ul>
                 </nav>
@@ -115,10 +112,10 @@
                                     <td style="color: #e83f5b">- R$ <?= number_format($finance->price,2,',', '.') ?></td>
                                 <?php endif; ?>
                                 <td><?= $this->escapeHtml($finance->category) ?></td>
-                                <td><?= date("m/d/Y",strtotime($finance->date)) ?></td>
+                                <td><?= date("d/m/Y",strtotime($finance->date)) ?></td>
                                 <td>
-                                    <a href="<?=$this->url('finances',['action'=>'edit', 'id' => $finance->id])?>">Editar</a>
-                                    <a href="<?=$this->url('finances',['action'=>'delete', 'id' => $finance->id])?>">Deletar</a>
+                                    <a href="<?=$this->url('finances',['action'=>'edit', 'id' => $finance->id])?>" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
+                                    <a href="<?=$this->url('finances',['action'=>'delete', 'id' => $finance->id])?>" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

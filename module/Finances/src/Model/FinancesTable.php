@@ -46,7 +46,7 @@ class FinancesTable
             'type'      => $finance->type,
             'price'     => $finance->price,
             'category'  => $finance->category,
-            'date'      => '2020-07-01 00:00:00'
+            'date'      => date('Y-m-d h:i:s')
         ];
 
         $id = (int) $finance->id;
