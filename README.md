@@ -11,7 +11,7 @@
 
 
 ## Sobre o Projeto
-<p align="justify">Sistema CRUD Financeiro para fazer lançamentos de entradas e saídas de movimentações, informando título, categoria, tipo de movimentação e quantidade.</p>
+Sistema CRUD Financeiro para fazer lançamentos de entradas e saídas de movimentações, informando título, categoria, tipo de movimentação e quantidade.
 
 ## Imagens
 <p display:flex> 
@@ -20,28 +20,28 @@
 </p>
 
 ### Feito com
-- Zend Framework 3.0
+- [Zend Framework](https://framework.zend.com/) 
 
 ### Executando o projeto
 
-<p align="justify">
-  1 - Criar um Banco MySQL com o nome goFinances com os seguintes campos: 
+1 - Criar um Banco MySQL com o nome goFinances com os seguintes campos: 
     id (INT), 
     type (VARCHAR), 
     price (DECIMAL(10,2)), 
     category (VARCHAR), 
     date (DATETIME)
   Obs: As configurações do DB podem ser modificadas na tag 'db' do seguinte arquivo 
+
   ```bash
     goFinacesWithZend
     ├── module/
     │   ├── Finances/
     │   │   └── config/
     │   │       └── module.config.php
-    ```
-   2 - Na pasta do projeto execute composer update
-   3 - Em seguida execute composer serve, o projeto abrirá no localhost:8080
-</p>
+    
+  ```
+2 - Na pasta do projeto execute ```sh composer update```
+3 - Em seguida execute ```sh composer serve```, o projeto abrirá no localhost:8080
 
 ## Contato
 
