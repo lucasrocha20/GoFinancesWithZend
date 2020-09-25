@@ -20,13 +20,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Application\\": "module/Application/src/",
             "Finances\\": "module/Finances/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\": "module/Application/test/",
             "FinancesTest\\": "module/Finances/test/"
         }
     },
