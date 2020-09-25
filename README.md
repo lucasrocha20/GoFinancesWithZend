@@ -24,13 +24,13 @@ Sistema CRUD Financeiro para fazer lançamentos de entradas e saídas de movimen
 
 ### Executando o projeto
 
-1 - Criar um Banco MySQL com o nome goFinances com os seguintes campos: 
-id (INT), 
-type (VARCHAR), 
-price (DECIMAL(10,2)), 
-category (VARCHAR), 
-date (DATETIME)
-Obs: As configurações do DB podem ser modificadas na tag 'db' do seguinte arquivo 
+1. Criar um Banco MySQL com o nome goFinances com os seguintes campos: 
+    id (INT), 
+    type (VARCHAR), 
+    price (DECIMAL(10,2)), 
+    category (VARCHAR), 
+    date (DATETIME)
+  Obs: As configurações do DB podem ser modificadas na tag 'db' do seguinte arquivo 
 
   ```bash
     goFinacesWithZend
@@ -40,8 +40,8 @@ Obs: As configurações do DB podem ser modificadas na tag 'db' do seguinte arqu
     │   │       └── module.config.php
     
   ```
-2 - Na pasta do projeto execute ```composer update```
-3 - Em seguida execute ```composer serve```, o projeto abrirá no localhost:8080
+2. Na pasta do projeto execute ```composer update```
+3. Em seguida execute ```composer serve```, o projeto abrirá no localhost:8080
 
 ## Contato
 
